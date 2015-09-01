@@ -1,0 +1,37 @@
+
+#
+#scfsi-recherche : chercheur de mot Python
+#Auteur : SYSCORE Team
+#Août 2015
+#Version 1.0
+#
+#
+#un petit programme Python
+#Lie dans une liste de recherche de mots
+#lie un fichier binaire dans un tableau d'octet
+#cherche le tableau d'octet pour les occurences de n'importe quelle recherche de mots spécifique
+#Imprime un affichage HEX/ASCII en localisant les mots trouvés
+#Imprime en sortie une liste des mots possibles identifiés qu'ils ne correspondent pas
+#
+#
+#
+#
+
+
+import logging
+import time
+import SCFSI_recherche
+
+if __name__=='__main__':
+    SCFSI_Version ='1.0'
+    logging.basicConfig(filename='RechercheLog.log',level=logging.DEBUG,format='%(asctime)s %(message)s')
+    SCFSI_recherche.ParseCommand()
+    log= logging.getLogger('main.SCFSI_recherche')
+    log.info('SCFSI a commencé')
+    startTime = time.time()
+    SCFSI_recherche.SearchWords()
+    endTime = time.time()
+    duration = endTime - startTime
+    logging.info('Temps écoulé:'+str(duration)+'seconds')
+    logging.info(*)
+    logging.info(' Le programe s\'est terminé correctement')
